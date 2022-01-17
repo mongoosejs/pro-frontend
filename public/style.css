@@ -4,8 +4,8 @@ html {
 body {
   font-family: 'Roboto', sans-serif;
 }
-body .container {
-  max-width: 114rem;
+.container {
+  max-width: 1200px;
   margin: 0 auto;
 }
 /* html5reset.css - 01/11/2011 */
@@ -41,31 +41,6 @@ a {
   vertical-align: baseline;
   background: transparent;
 }
-/* change colours to suit your needs */
-ins {
-  background-color: #ff9;
-  color: #000;
-  text-decoration: none;
-}
-/* change colours to suit your needs */
-mark {
-  background-color: #ff9;
-  color: #000;
-  font-style: italic;
-  font-weight: bold;
-}
-del {
-  text-decoration: line-through;
-}
-abbr[title], dfn[title] {
-  border-bottom: 1px dotted;
-  cursor: help;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-/* change border colour to suit your needs */
 hr {
   display: block;
   height: 1px;
@@ -265,40 +240,7 @@ input, select {
   padding: 1rem 0;
   text-transform: uppercase;
 }
-#navBar {
-  margin-top: 1.5rem;
-}
-#navBar .logo {
-  width: 12rem;
-}
-#navBar .navBarLink {
-  display: flex;
-  justify-content: end;
-}
-#navBar .navBarLink li {
-  list-style: none;
-  margin-left: 5rem;
-}
-#navBar .navBarLink li a {
-  text-decoration: none;
-  font-size: 1.8rem;
-  color: #6E6E6E;
-  text-transform: capitalize;
-}
-#navBar .navBarLink li .active {
-  font-weight: 800;
-  color: #870007;
-}
-#navBar .navBarLink li .loginBtn {
-  padding: 1.2rem 4.5rem;
-  background: #870007;
-  border-radius: 1rem;
-  color: #fff;
-  -webkit-border-radius: 1rem;
-  -moz-border-radius: 1rem;
-  -ms-border-radius: 1rem;
-  -o-border-radius: 1rem;
-}
+
 #banner {
   background: url(../images/texture-left.png);
   background-repeat: no-repeat;

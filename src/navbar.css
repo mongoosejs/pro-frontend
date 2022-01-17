@@ -1,0 +1,56 @@
+.navbar {
+  overflow: hidden;
+  position: sticky; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  left: 0;
+  width: 100%; /* Full width */
+  height: 4.75em;
+  z-index: 1000;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.25em;
+  margin-bottom: 2em;
+  color: white;
+}
+
+.navbar .logo {
+  float: left;
+  padding-top: 0.5em;
+}
+
+.navbar .logo img {
+  height: 50px;
+}
+
+.navbar .links {
+  float: right;
+  margin-right: 1em;
+  margin-top: 1.5em;
+}
+
+.navbar .links div {
+  display: inline-block;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: #6E6E6E;
+  text-transform: capitalize;
+}
+.navbar .active {
+  font-weight: 800;
+  color: #870007;
+}
+.navbar .loginBtn {
+  padding: 1.2rem 4.5rem;
+  background: #870007;
+  border-radius: 1rem;
+  color: #fff;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}

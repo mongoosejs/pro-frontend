@@ -29,6 +29,10 @@ module.exports = {
         options: {
           sources: false
         }
+      },
+      {
+        test: /\.css$/i,
+        type: 'asset/source'
       }
     ]
   }
