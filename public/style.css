@@ -1,0 +1,1041 @@
+html {
+  font-size: 10px;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+}
+body .container {
+  max-width: 114rem;
+  margin: 0 auto;
+}
+/* html5reset.css - 01/11/2011 */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+body {
+  line-height: 1;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+nav ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+del {
+  text-decoration: line-through;
+}
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+input, select {
+  vertical-align: middle;
+}
+/* SECTIONS ============================================================================= */
+.section {
+  clear: both;
+  padding: 0px;
+  margin: 0px;
+}
+/* GROUPING ============================================================================= */
+.group:before, .group:after {
+  content: "";
+  display: table;
+}
+.group:after {
+  clear: both;
+}
+.group {
+  zoom: 1;
+ /* For IE 6/7 (trigger hasLayout) */
+}
+/* GRID COLUMN SETUP ==================================================================== */
+.col {
+  display: block;
+  float: left;
+  margin: 1% 0 1% 1.6%;
+}
+.col:first-child {
+  margin-left: 0;
+}
+/* all browsers except IE6 and lower */
+/* GRID OF TWO ============================================================================= */
+.span_2_of_2 {
+  width: 100%;
+}
+.span_1_of_2 {
+  width: 49.2%;
+}
+/* GRID OF THREE ============================================================================= */
+.span_3_of_3 {
+  width: 100%;
+}
+.span_2_of_3 {
+  width: 66.13%;
+}
+.span_1_of_3 {
+  width: 32.26%;
+}
+/* GRID OF FOUR ============================================================================= */
+.span_4_of_4 {
+  width: 100%;
+}
+.span_3_of_4 {
+  width: 74.6%;
+}
+.span_2_of_4 {
+  width: 49.2%;
+}
+.span_1_of_4 {
+  width: 23.8%;
+}
+/* GRID OF FIVE ============================================================================= */
+.span_5_of_5 {
+  width: 100%;
+}
+.span_4_of_5 {
+  width: 79.68%;
+}
+.span_3_of_5 {
+  width: 59.36%;
+}
+.span_2_of_5 {
+  width: 39.04%;
+}
+.span_1_of_5 {
+  width: 18.72%;
+}
+/* GRID OF SIX ============================================================================= */
+.span_6_of_6 {
+  width: 100%;
+}
+.span_5_of_6 {
+  width: 83.06%;
+}
+.span_4_of_6 {
+  width: 66.13%;
+}
+.span_3_of_6 {
+  width: 49.2%;
+}
+.span_2_of_6 {
+  width: 32.26%;
+}
+.span_1_of_6 {
+  width: 15.33%;
+}
+/* GRID OF SEVEN ============================================================================= */
+.span_7_of_7 {
+  width: 100%;
+}
+.span_6_of_7 {
+  width: 85.48%;
+}
+.span_5_of_7 {
+  width: 70.97%;
+}
+.span_4_of_7 {
+  width: 56.45%;
+}
+.span_3_of_7 {
+  width: 41.94%;
+}
+.span_2_of_7 {
+  width: 27.42%;
+}
+.span_1_of_7 {
+  width: 12.91%;
+}
+/* GRID OF EIGHT ============================================================================= */
+.span_8_of_8 {
+  width: 100%;
+}
+.span_7_of_8 {
+  width: 87.3%;
+}
+.span_6_of_8 {
+  width: 74.6%;
+}
+.span_5_of_8 {
+  width: 61.9%;
+}
+.span_4_of_8 {
+  width: 49.2%;
+}
+.span_3_of_8 {
+  width: 36.5%;
+}
+.span_2_of_8 {
+  width: 23.8%;
+}
+.span_1_of_8 {
+  width: 11.1%;
+}
+/* GRID OF TWELVE ============================================================================= */
+.span_12_of_12 {
+  width: 100%;
+}
+.span_11_of_12 {
+  width: 91.53%;
+}
+.span_10_of_12 {
+  width: 83.06%;
+}
+.span_9_of_12 {
+  width: 74.6%;
+}
+.span_8_of_12 {
+  width: 66.13%;
+}
+.span_7_of_12 {
+  width: 57.66%;
+}
+.span_6_of_12 {
+  width: 49.2%;
+}
+.span_5_of_12 {
+  width: 40.73%;
+}
+.span_4_of_12 {
+  width: 32.26%;
+}
+.span_3_of_12 {
+  width: 23.8%;
+}
+.span_2_of_12 {
+  width: 15.33%;
+}
+.span_1_of_12 {
+  width: 6.86%;
+}
+#topHeader {
+  background: #000;
+}
+#topHeader .topHeaderText {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  text-transform: uppercase;
+}
+#navBar {
+  margin-top: 1.5rem;
+}
+#navBar .logo {
+  width: 12rem;
+}
+#navBar .navBarLink {
+  display: flex;
+  justify-content: end;
+}
+#navBar .navBarLink li {
+  list-style: none;
+  margin-left: 5rem;
+}
+#navBar .navBarLink li a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: #6E6E6E;
+  text-transform: capitalize;
+}
+#navBar .navBarLink li .active {
+  font-weight: 800;
+  color: #870007;
+}
+#navBar .navBarLink li .loginBtn {
+  padding: 1.2rem 4.5rem;
+  background: #870007;
+  border-radius: 1rem;
+  color: #fff;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+#banner {
+  background: url(../images/texture-left.png);
+  background-repeat: no-repeat;
+  background-position: -8% 10%;
+  background-size: 40% 108%;
+}
+#banner .container {
+  padding: 3rem 12rem;
+}
+#banner .bannerTitle {
+  color: #6E6E6E;
+  font-weight: 400;
+  line-height: 1.2;
+  font-size: 3.5rem;
+  margin-bottom: 3rem;
+}
+#banner .goProBtn {
+  margin-top: 3rem;
+  padding: .5rem 2.5rem;
+  border: .2rem solid #870007;
+  border-radius: 1rem;
+  text-decoration: none;
+  font-size: 2.4rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  color: #000;
+}
+#banner .goProBtn span {
+  font-weight: 700;
+}
+#banner .authorComment {
+  width: 40%;
+  margin: 0 0 0 auto;
+  text-align: right;
+}
+#banner .authorComment .comment {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #000;
+  background: url(../images/left-quate.png);
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: contain;
+  padding-top: 3rem;
+}
+#banner .authorComment .authorDegignation {
+  font-size: 2rem;
+  font-weight: 700;
+  padding-top: 2.5rem;
+  color: #000;
+}
+#banner .authorComment .author {
+  color: #870007;
+  font-weight: 700;
+  padding-top: .5rem;
+  font-size: 2rem;
+}
+#banner .authorComment .authorAndDesg {
+  background: url(../images/right-quate.png);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+  padding-bottom: 3rem;
+}
+.subTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #6E6E6E;
+}
+#keyFeatures {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+#keyFeatures .downBorder {
+  height: .5rem;
+  width: 10rem;
+  background: #D5D5D5;
+  border-radius: .5rem;
+  -webkit-border-radius: .5rem;
+  -moz-border-radius: .5rem;
+  -ms-border-radius: .5rem;
+  -o-border-radius: .5rem;
+  margin-top: .3rem;
+}
+.jobBoard {
+  display: flex;
+  margin-top: 3rem;
+}
+.jobBoard .jobBoardImg {
+  width: 6rem;
+  margin-right: 2rem;
+  height: 5rem;
+}
+.jobBoard .jobBoardImg2 {
+  height: auto;
+}
+.jobBoard .jobTitle {
+  text-transform: uppercase;
+  color: #030303;
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+.jobBoard .jobTitle img {
+  width: 1.6rem;
+  margin-left: 1rem;
+}
+.jobBoard .jobTitle button {
+  padding: .5rem 1rem;
+  background: #870007;
+  border: .1rem solid #870007;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 1.5rem;
+}
+.jobBoard .jobTitle button img {
+  width: 1.8rem;
+}
+.jobBoard .jobDetisl {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #000000;
+  width: 55%;
+  line-height: 1.5;
+}
+.jobBoard .jobDetisl a {
+  color: #000000;
+}
+.jobBoard .jobDetisl span a {
+  color: #870007;
+  text-decoration: none;
+}
+.jobDescription ul {
+  padding-left: 2rem;
+  margin-top: 1rem;
+}
+.jobDescription ul li {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #000000;
+  list-style-position: inside;
+  line-height: 1.5;
+}
+#productDetails .downBorder {
+  height: .5rem;
+  width: 10rem;
+  background: #D5D5D5;
+  border-radius: .5rem;
+  -webkit-border-radius: .5rem;
+  -moz-border-radius: .5rem;
+  -ms-border-radius: .5rem;
+  -o-border-radius: .5rem;
+  margin: 0 0 0 auto;
+  margin-top: .3rem;
+}
+#productDetails .subTitle {
+  text-align: right;
+}
+#productDetails .productDetailsHeader {
+  margin: 5rem 0;
+  height: 15rem;
+  background: url(../images/dots.png);
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.productFetures .jobDetisl {
+  width: 100%;
+}
+.productFetures .innerDiv {
+  display: block;
+  padding: .5rem .5rem;
+  background: #F6F6F6;
+  border-radius: .5rem;
+  margin-top: .5rem;
+}
+.bold {
+  font-weight: bold;
+}
+.gray {
+  color: #6E6E6E;
+}
+#newsletterSubscription {
+  margin-top: 4rem;
+  background: url(../images/dots-2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 4rem 0;
+}
+#newsletterSubscription .subscribeDiv {
+  padding-top: 3rem;
+  width: 50%;
+  margin: 0 auto;
+}
+#newsletterSubscription .subscribeDiv .subscribeTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #6E6E6E;
+  text-align: center;
+}
+#newsletterSubscription .inputBox {
+  text-align: center;
+  margin-top: 2rem;
+}
+#newsletterSubscription .inputBox .emailInput {
+  padding: .75rem .5rem;
+  font-size: 1.6rem;
+  color: #6E6E6E;
+  border-radius: .5rem;
+  -webkit-border-radius: .5rem;
+  -moz-border-radius: .5rem;
+  -ms-border-radius: .5rem;
+  -o-border-radius: .5rem;
+  border: .15rem solid #6e6e6e4f;
+}
+#newsletterSubscription .inputBox .submitBtn {
+  padding: .75rem 3rem;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  background: #870007;
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: 400;
+  margin-left: 2rem;
+  cursor: pointer;
+  border: .1rem solid #870007;
+}
+.removeMarginTop {
+  margin-top: 0 !important;
+}
+.smallMarginTop {
+  margin-top: 3rem !important;
+}
+#footer {
+  background: #000;
+  padding: 1.5rem 0;
+}
+#footer * {
+  color: #fff;
+}
+#footer .signUpwarning {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+#footer .inputBox .emailInput {
+  padding: .75rem 1rem;
+  color: #6E6E6E;
+  font-size: 1.5rem;
+}
+#footer .submitBtn {
+  border: .1rem solid #870007;
+  background: transparent;
+  font-size: 1.5rem;
+  padding: .75rem 4rem;
+  margin-left: 1rem;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+#footer .mongooseProLoginBtn {
+  border: .2rem solid #fff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  display: block;
+  width: 20rem;
+  background: transparent;
+  cursor: pointer;
+  padding: .85rem 2rem;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+#footer .footerLogo {
+  margin: 3rem 0;
+}
+#footer .quickLinks li {
+  list-style: none;
+  list-style-position: inside;
+  line-height: 1.5;
+}
+#footer .quickLinks li a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+#footer .socalLinks {
+  margin-top: 2rem;
+}
+#footer .socalLinks li {
+  list-style: none;
+}
+#footer .socalLinks a img {
+  width: 3.5rem;
+  margin-right: 1rem;
+}
+#footer .socalLinks a {
+  text-decoration: none;
+}
+#footer .licenceTxt {
+  font-size: 1.6rem;
+  margin-top: 4rem;
+}
+#footer .shopeAparelBtn {
+  border: .1rem solid #870007;
+  background: transparent;
+  font-size: 1.5rem;
+  padding: .75rem 4rem;
+  margin-left: 1rem;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  margin-top: 5rem;
+  text-transform: uppercase;
+}
+#companyName, #location, #applyUrl {
+  padding: 1rem .75rem;
+  border: none;
+  border-radius: .5rem;
+  -webkit-border-radius: .5rem;
+  -moz-border-radius: .5rem;
+  -ms-border-radius: .5rem;
+  -o-border-radius: .5rem;
+  background: #F6F6F6;
+  width: 36rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #000;
+  margin-top: 1rem;
+}
+#companyName::placeholder, #location::placeholder, #applyUrl::placeholder {
+  color: #000;
+}
+.profilePageContent .jobBoard {
+  display: block;
+  margin-top: 0;
+}
+#companyDescription {
+  padding: 1rem .75rem;
+  border: none;
+  border-radius: .5rem;
+  -webkit-border-radius: .5rem;
+  -moz-border-radius: .5rem;
+  -ms-border-radius: .5rem;
+  -o-border-radius: .5rem;
+  background: #F6F6F6;
+  width: 36rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #000;
+  margin-top: 1rem;
+}
+#companyDescription::placeholder {
+  color: #000;
+}
+.companyDescriptionCtrl {
+  margin-top: 2rem;
+}
+.companyLogoCtrl {
+  width: 7rem;
+  margin-top: 1rem;
+  display: block;
+}
+.saveBtn {
+  padding: .75rem 3rem;
+  background: #870007;
+  border: .1rem solid #870007;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  color: #fff;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+.profilePabeProductDet {
+  margin-bottom: 0 !important;
+}
+.gitHubOrganization .gitHubOrgSingle {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.gitHubOrganization .gitHubOrgSingle img {
+  width: 6rem;
+  height: 7rem;
+}
+.gitHubOrganization .gitHubOrgSingle a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.6rem;
+}
+.fullGitOranization .jobBoard {
+  display: block;
+}
+.fullGitOranization .companyDescriptionCtrl {
+  margin-bottom: 4rem;
+}
+.jobDesc {
+  font-size: 1.4rem;
+  color: #6E6E6E;
+  font-weight: 400;
+  line-height: 1.3;
+  margin-top: 1rem;
+}
+.mobileMenuControler {
+  display: none;
+}
+.closeBtnCtrl {
+  display: none;
+}
+.footerMidlePartCtrler {
+  display: flex;
+  justify-content: center;
+}
+/* GO FULL WIDTH AT LESS THAN 480 PIXELS */
+@media only screen and (max-width: 576px) {
+  .span_12_of_12 {
+      width: 100%;
+ }
+  .span_11_of_12 {
+      width: 100%;
+ }
+  .span_10_of_12 {
+      width: 100%;
+ }
+  .span_9_of_12 {
+      width: 100%;
+ }
+  .span_8_of_12 {
+      width: 100%;
+ }
+  .span_7_of_12 {
+      width: 100%;
+ }
+  .span_6_of_12 {
+      width: 100%;
+ }
+  .span_5_of_12 {
+      width: 100%;
+ }
+  .span_4_of_12 {
+      width: 100%;
+ }
+  .span_3_of_12 {
+      width: 100%;
+ }
+  .span_2_of_12 {
+      width: 100%;
+ }
+  .span_1_of_12 {
+      width: 100%;
+ }
+  .span_8_of_8 {
+      width: 100%;
+ }
+  .span_7_of_8 {
+      width: 100%;
+ }
+  .span_6_of_8 {
+      width: 100%;
+ }
+  .span_5_of_8 {
+      width: 100%;
+ }
+  .span_4_of_8 {
+      width: 100%;
+ }
+  .span_3_of_8 {
+      width: 100%;
+ }
+  .span_2_of_8 {
+      width: 100%;
+ }
+  .span_1_of_8 {
+      width: 100%;
+ }
+  .span_7_of_7 {
+      width: 100%;
+ }
+  .span_6_of_7 {
+      width: 100%;
+ }
+  .span_5_of_7 {
+      width: 100%;
+ }
+  .span_4_of_7 {
+      width: 100%;
+ }
+  .span_3_of_7 {
+      width: 100%;
+ }
+  .span_2_of_7 {
+      width: 100%;
+ }
+  .span_1_of_7 {
+      width: 100%;
+ }
+  .span_6_of_6 {
+      width: 100%;
+ }
+  .span_5_of_6 {
+      width: 100%;
+ }
+  .span_4_of_6 {
+      width: 100%;
+ }
+  .span_3_of_6 {
+      width: 100%;
+ }
+  .span_2_of_6 {
+      width: 100%;
+ }
+  .span_1_of_6 {
+      width: 100%;
+ }
+  .span_5_of_5 {
+      width: 100%;
+ }
+  .span_4_of_5 {
+      width: 100%;
+ }
+  .span_3_of_5 {
+      width: 100%;
+ }
+  .span_2_of_5 {
+      width: 100%;
+ }
+  .span_1_of_5 {
+      width: 100%;
+ }
+  .span_4_of_4 {
+      width: 100%;
+ }
+  .span_3_of_4 {
+      width: 100%;
+ }
+  .span_2_of_4 {
+      width: 100%;
+ }
+  .span_1_of_4 {
+      width: 100%;
+ }
+  .span_3_of_3 {
+      width: 100%;
+ }
+  .span_2_of_3 {
+      width: 100%;
+ }
+  .span_1_of_3 {
+      width: 100%;
+ }
+  .span_2_of_2 {
+      width: 100%;
+ }
+  .span_1_of_2 {
+      width: 100%;
+ }
+  .col {
+      margin: 1% 0 1% 0%;
+ }
+  .container {
+      padding-right: 1rem;
+      padding-left: 1rem;
+ }
+  .mobileMenuControler {
+      display: flex;
+      justify-content: space-between;
+ }
+  .mobileLogo {
+      height: 3rem;
+ }
+  .menu {
+      height: 2.4rem;
+      cursor: pointer;
+ }
+  .menuControll {
+      position: fixed;
+      left: 0;
+      top: 0;
+      background: rgba(0, 0, 0, 0.9);
+      width: 0;
+      height: 100%;
+      transition: linear 0.4s;
+      -webkit-transition: linear 0.4s;
+      -moz-transition: linear 0.4s;
+      -ms-transition: linear 0.4s;
+      -o-transition: linear 0.4s;
+      overflow: hidden;
+ }
+  .menuControll .navBarLink {
+      padding-top: 4rem;
+      display: block !important;
+      text-align: center;
+ }
+  .menuControll .navBarLink li {
+      margin-bottom: 1rem;
+      margin-left: 0 !important;
+ }
+  .menuControll .navBarLink li * {
+      color: #fff !important;
+ }
+  .menuControll .navBarLink li .active {
+      color: #d1000a !important;
+ }
+  .menuControll .navBarLink .loginBtn {
+      margin-top: 1rem;
+      display: inline-block;
+      padding: 1.2rem 2.5rem !important;
+ }
+  .closeBtnCtrl {
+      display: block;
+      text-align: end;
+      padding-top: 2rem;
+      padding-right: 1.5rem;
+ }
+  .closeBtnCtrl img {
+      cursor: pointer;
+ }
+  .logo {
+      display: none;
+ }
+  #productDetails .productDetailsHeader {
+      margin: 0 !important;
+ }
+  #productDetails .productDetailsHeader {
+      background: #fff;
+ }
+  .jobDesc br {
+      display: none;
+ }
+  #companyName, #location, #applyUrl {
+      width: 93%;
+ }
+  #companyDescription {
+      width: 93%;
+ }
+  #banner {
+      background: #fff;
+ }
+  #banner .container {
+      padding: 1rem 1rem;
+ }
+  #banner .bannerTitle {
+      color: #6E6E6E;
+      font-weight: 400;
+      line-height: 1.2;
+      font-size: 2.2rem;
+      margin-bottom: 3rem;
+ }
+  #banner .bannerTitle br {
+      display: none;
+ }
+  #banner .authorComment .comment {
+      font-size: 1.6rem;
+      line-height: 1.5;
+      font-weight: 400;
+      color: #000;
+      background: #fff;
+      padding-top: 3rem;
+ }
+  #banner .authorComment {
+      width: 100%;
+      text-align: right;
+ }
+  #banner .authorComment .authorAndDesg {
+      background: #fff;
+      padding-bottom: 3rem;
+ }
+  #keyFeatures {
+      margin-top: 2rem;
+      margin-bottom: 0;
+ }
+  .jobBoard .jobDetisl {
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: #000000;
+      width: 100%;
+      line-height: 1.5;
+ }
+  .jobBoard .jobBoardImg2 {
+      height: 5rem;
+ }
+  #newsletterSubscription .subscribeDiv {
+      padding-top: 3rem;
+      width: 100%;
+      margin: 0 auto;
+ }
+  #newsletterSubscription .inputBox .submitBtn {
+      margin-top: 1rem;
+ }
+  #footer .submitBtn {
+      margin-top: 1rem;
+ }
+  #productDetails .productDetailsHeader {
+      margin: 5rem 0;
+      margin-bottom: 0;
+      height: 8rem;
+      background: #fff;
+ }
+  .footerMidlePartCtrler {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+      display: block;
+ }
+  .footerLeftCtrl {
+      text-align: left !important;
+ }
+  .jobsPageContentCtrl {
+      margin-top: 2rem;
+ }
+}
+@media screen and (min-width: 1100px) and (max-width: 1631px) {
+  #banner .bannerTitle br {
+      display: none;
+ }
+}

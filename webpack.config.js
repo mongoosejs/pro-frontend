@@ -1,5 +1,8 @@
 'use strict';
 
+const config = require('./.config');
+const webpack = require('webpack');
+
 module.exports = {
   mode: 'development',
   entry: {
@@ -13,7 +16,11 @@ module.exports = {
   optimization: {
     minimize: false
   },
-  plugins: [],
+  plugins: [
+    new webpack.DefinePlugin({
+      __BASE_URL: `'${config.baseURL}'`
+    })
+  ],
   module: {
     rules: [
       {

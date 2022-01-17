@@ -10,6 +10,6 @@
     "webpack": "5.41.1"
   },
   "scripts": {
-    "start": "node ."
+    "start": "env NODE_ENV=development node ."
   }
 }

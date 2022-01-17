@@ -30,16 +30,22 @@ app.listen(port, () => {
 });
 
 if (process.env.NODE_ENV === 'development') {
-  compiler.watch({}, (err) => {
+  compiler.watch({}, (err, stats) => {
     if (err) {
       process.nextTick(() => { throw new Error('Error compiling bundle: ' + err.stack); });
+    }
+    if (stats.compilation.errors.length) {
+      process.nextTick(() => { throw new Error('Error compiling bundle: ' + stats.compilation.errors[0].stack); });
     }
     console.log('Webpack compiled successfully');
   });
 } else {
-  compiler.run((err) => {
+  compiler.run((err, stats) => {
     if (err) {
       process.nextTick(() => { throw new Error('Error compiling bundle: ' + err.stack); });
+    }
+    if (stats.compilation.errors.length) {
+      process.nextTick(() => { throw new Error('Error compiling bundle: ' + stats.compilation.errors[0].stack); });
     }
     console.log('Webpack compiled successfully');
   });
