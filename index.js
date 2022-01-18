@@ -13,8 +13,8 @@ app.use('/vanillatoasts', express.static(__dirname + '/node_modules/vanillatoast
 
 const routes = require('./src/routes');
 
-for (const { url } of routes) {
-  app.get(url, function(req, res) {
+for (const { path } of routes) {
+  app.get(path, function(req, res) {
     fs.readFile('./public/index.html', (err, index) => {
       if (err != null) {
         return res.status(500).send(err.message);
