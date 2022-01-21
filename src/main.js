@@ -8,6 +8,7 @@ const api = require('./api');
 
 require('./home')(app);
 require('./navbar/navbar')(app);
+require('./oauth-callback/oauth-callback')(app);
 require('./profile/profile')(app);
 
 app.component('app-component', {
@@ -16,7 +17,8 @@ app.component('app-component', {
 
     const auth = Vue.reactive({
       status: 'in_progress',
-      accessToken: accessToken
+      accessToken: accessToken,
+      user: null
     });
 
     Vue.provide('auth', auth);
@@ -31,15 +33,19 @@ app.component('app-component', {
     }
 
     const opts = { headers: { authorization: this.auth.accessToken } };
-    const { exists } = await api.get('/api/verifyGithubAccessToken', opts).
+    const { exists, token } = await api.get('/api/verifyGithubAccessToken', opts).
       then(res => res.data).
       catch(err => {
         return { exists: false };
       });
+
+      console.log('GG', token)
     if (exists) {
       this.auth.status = 'logged_in';
+      this.auth.user = token.subscriberId;
     } else {
       this.auth.status = 'logged_out';
+      this.auth.user = null;
     }
   },
   template: `

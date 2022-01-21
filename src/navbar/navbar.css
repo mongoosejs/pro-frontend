@@ -38,7 +38,6 @@
   text-decoration: none;
   font-size: 1.8rem;
   color: #6E6E6E;
-  text-transform: capitalize;
 }
 .navbar .active {
   font-weight: 800;

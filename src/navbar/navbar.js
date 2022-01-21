@@ -8,5 +8,21 @@ appendCSS(css);
 
 module.exports = app => app.component('navbar', {
   inject: ['auth'],
-  template: template
+  template: template,
+  methods: {
+    active(name) {
+      if (this.$router.currentRoute._value.name === name) {
+        return 'active';
+      }
+      return '';
+    },
+    logout() {
+      this.auth.status = 'logged_out';
+      this.auth.accessToken = null;
+      this.auth.user = null;
+      window.localStorage.removeItem('_mongooseProToken');
+
+      this.$router.push('/');
+    }
+  }
 });

@@ -1,5 +1,6 @@
 'use strict';
 
+const config = require('./.config');
 const express = require('express');
 const fs = require('fs');
 const webpack = require('webpack');
@@ -24,7 +25,7 @@ for (const { path } of routes) {
   });
 }
 
-const port = process.env.PORT || 3000;
+const port = config.port || 3000;
 app.listen(port, () => {
   console.log('Listening on port ' + port);
 });

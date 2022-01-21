@@ -6,11 +6,28 @@
       </div>
     </a>
   </div>
-  <div class="links">
+  <div class="links" v-if="auth.status === 'logged_out'">
     <div><a href="#" class="active">BUY NOW</a></div>
-          <div><a href="#">KEY FEATURES</a></div>
-          <div><a href="#">PRODUCT DETAILS</a></div>
-          <div><a href="#" class="loginBtn">LOGIN</a></div>
+    <div><a href="#">KEY FEATURES</a></div>
+    <div><a href="#">PRODUCT DETAILS</a></div>
+    <div>
+      <a
+        href="https://github.com/login/oauth/authorize?client_id=602deb0a06f09c89374a"
+        class="loginBtn">
+        LOGIN
+      </a>
+    </div>
+    <div v-if="auth.status === 'logged_in'">
+      <a href="#" class="loginBtn">{{auth.user.githubUsername}}</a>
+    </div>
+  </div>
+  <div class="links" v-if="auth.status === 'logged_in'">
+    <div><a href="/profile" :class="active('profile')">Company Profile</a></div>
+    <div><a href="#">My Team</a></div>
+    <div><a href="#">Job Board</a></div>
+    <div v-if="auth.status === 'logged_in'">
+      <a href="javascript:void 0" @click="logout()" class="loginBtn">Logout</a>
+    </div>
   </div>
   <div style="clear: both"></div>
 </section>
