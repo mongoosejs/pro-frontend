@@ -6,10 +6,13 @@ const app = Vue.createApp({
 
 const api = require('./api');
 
-require('./home')(app);
+require('./home/home')(app);
+require('./footer/footer')(app);
+require('./job-board/job-board')(app);
 require('./navbar/navbar')(app);
 require('./oauth-callback/oauth-callback')(app);
 require('./profile/profile')(app);
+require('./team/team')(app);
 
 app.component('app-component', {
   setup() {
@@ -38,8 +41,6 @@ app.component('app-component', {
       catch(err => {
         return { exists: false };
       });
-
-      console.log('GG', token)
     if (exists) {
       this.auth.status = 'logged_in';
       this.auth.user = token.subscriberId;
@@ -52,6 +53,7 @@ app.component('app-component', {
     <div>
       <navbar />
       <router-view />
+      <footer-component />
     </div>
   `
 });
