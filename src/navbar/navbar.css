@@ -6,11 +6,15 @@
   width: 100%; /* Full width */
   height: 4.75em;
   z-index: 1000;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: 0;
+  padding-right: 0;
   margin-bottom: 2em;
   color: white;
   background-color: white;
+}
+
+.navbar .logo-wrap {
+  margin-left: 1em;
 }
 
 .navbar .logo {
