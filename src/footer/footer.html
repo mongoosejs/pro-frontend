@@ -2,7 +2,7 @@
   <div class="container">
       <div class="section group">
           <div class="col span_4_of_12">
-              <p class="signUpwarning">Sign up for Mongoose Pro Today</p>
+              <p class="signUpwarning">Sign up for our Newsletter Today</p>
               <div class="inputBox">
                   <form action="#">
                       <input type="email" class="emailInput" placeholder="Email">
@@ -10,7 +10,9 @@
                   </form>
               </div>
               <img src="/images/mongoose-logo.png" alt="logo" class="footerLogo">
-              <button class="mongooseProLoginBtn">Mongoose Pro Login</button>
+              <a :href="githubLoginURL">
+                <button class="mongooseProLoginBtn">Mongoose Pro Login</button>
+              </a>
               <p class="licenceTxt">Licensed under MIT</p>
           </div>
           <div class="col span_4_of_12 footerMidlePartCtrler">

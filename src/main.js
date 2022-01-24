@@ -5,6 +5,11 @@ const app = Vue.createApp({
 });
 
 const api = require('./api');
+const config = require('../.config');
+
+Object.assign(app.config.globalProperties, {
+  githubLoginURL: `https://github.com/login/oauth/authorize?client_id=${config.githubOAuthClientId}`
+});
 
 require('./home/home')(app);
 require('./footer/footer')(app);

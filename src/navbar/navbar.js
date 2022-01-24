@@ -11,7 +11,8 @@ module.exports = app => app.component('navbar', {
   template: template,
   methods: {
     active(name) {
-      if (this.$router.currentRoute._value.name === name) {
+      console.log('AA', this.$router.currentRoute);
+      if (this.$router.currentRoute.value.name === name) {
         return 'active';
       }
       return '';
