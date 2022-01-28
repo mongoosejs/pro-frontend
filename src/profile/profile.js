@@ -8,5 +8,13 @@ const template = require('./profile.html').default;
 
 module.exports = app => app.component('profile', {
   inject: ['auth'],
-  template: template
+  template: template,
+  mounted: async function() {
+    await fetch('http://localhost:7071/api/updateSub');
+  },
+  methods: {
+    async updateSub() {
+
+    }
+  }
 });
