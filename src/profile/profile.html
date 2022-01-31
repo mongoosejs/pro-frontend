@@ -15,21 +15,21 @@
                   <div class="jobBoard">
                       <div class="jobDescription">
                           <p class="jobTitle">Company name</p>
-                          <input type="text" name="" placeholder="Pooka's Cafe" id="companyName">
+                          <input type="text" v-model="company" name="" placeholder="Pooka's Cafe" id="companyName">
                       </div>
 
                       <div class="jobDescription companyDescriptionCtrl">
                           <p class="jobTitle">Description</p>
-                          <textarea name="" id="companyDescription" cols="30" rows="2"
+                          <textarea v-model="description" name="" id="companyDescription" cols="30" rows="2"
                               placeholder="Pooka's Cafe is the #1 seller of treats in Miami Beach. Try our widgets out today!"></textarea>
 
                       </div>
 
                       <div class="jobDescription companyDescriptionCtrl companyLogo">
                           <p class="jobTitle">Logo</p>
-                          <img src="images/dog1.webp" alt="dog" class="companyLogoCtrl">
-
-                          <button class="saveBtn">Save</button>
+                          <input type="text" id="logoUrl" placeholder="https://thecodebarbarian.com/images/mongoose5.png" v-model="logo" />
+                          <img :src="logo" alt="dog" class="companyLogoCtrl">
+                          <button class="saveBtn" @click="updateSub">Save</button>
                       </div>
                   </div>
               </div>
