@@ -3,7 +3,7 @@
 const appendCSS = require('../appendCSS');
 const css = require('./profile.css');
 const template = require('./profile.html').default;
-const axios = require('axios');
+const api = require('../api');
 const validator = require('validator');
 
 // appendCSS(css);
@@ -35,7 +35,7 @@ module.exports = app => app.component('profile', {
       } else {
         this.error = '';
       }
-      const res = await axios.post(`http://localhost:7071/api/updateSub`, 
+      const res = await api.post(`/api/updateSubscriber`, 
       { user: this.auth.user._id, company: this.company, description: this.description, logo: this.logo},
       {headers: { authorization: this.auth.accessToken, 'Content-Type': 'application/json' } });
       console.log('the response', res.data)
