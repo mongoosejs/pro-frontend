@@ -25,12 +25,12 @@ for (const { path } of routes) {
   });
 }
 
-const port = config.port || 3000;
-app.listen(port, () => {
-  console.log('Listening on port ' + port);
-});
-
 if (process.env.NODE_ENV === 'development') {
+  const port = config.port || 3000;
+  app.listen(port, () => {
+    console.log('Listening on port ' + port);
+  });
+
   compiler.watch({}, (err, stats) => {
     if (err) {
       process.nextTick(() => { throw new Error('Error compiling bundle: ' + err.stack); });
