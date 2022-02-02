@@ -26,7 +26,7 @@ app.component('app-component', {
     const auth = Vue.reactive({
       status: 'in_progress',
       accessToken: accessToken,
-      user: null
+      subscriber: null
     });
 
     Vue.provide('auth', auth);
@@ -48,16 +48,16 @@ app.component('app-component', {
       });
     if (exists) {
       this.auth.status = 'logged_in';
-      this.auth.user = token.subscriberId;
+      this.auth.subscriber = token.subscriberId;
     } else {
       this.auth.status = 'logged_out';
-      this.auth.user = null;
+      this.auth.subscriber = null;
     }
   },
   template: `
     <div>
       <navbar />
-      <router-view />
+      <router-view v-if="auth.status !== 'in_progress'" />
       <footer-component />
     </div>
   `

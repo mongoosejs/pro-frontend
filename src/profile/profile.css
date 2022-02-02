@@ -1,0 +1,11 @@
+.profile .companyLogoCtrl {
+  height: 100px;
+}
+
+.profile .saveBtn {
+  cursor: pointer;
+}
+
+.profile input.error {
+  border: 1px solid red !important;
+}

@@ -5,15 +5,18 @@ module.exports = [
   },
   {
     path: '/job-board',
-    name: 'job-board'
+    name: 'job-board',
+    requireLogin: true
   },
   {
     path: '/profile',
-    name: 'profile'
+    name: 'profile',
+    requireLogin: true
   },
   {
     path: '/team',
-    name: 'team'
+    name: 'team',
+    requireLogin: true
   },
   {
     path: '/oauth-callback',

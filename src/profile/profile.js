@@ -5,13 +5,15 @@ const css = require('./profile.css');
 const template = require('./profile.html').default;
 const api = require('../api');
 const validator = require('validator');
+const vanillatoasts = require('vanillatoasts');
 
-// appendCSS(css);
+appendCSS(css);
 
 module.exports = app => app.component('profile', {
   inject: ['auth'],
   data: function() {
     return {
+      status: 'init',
       company: '',
       description: '',
       logo: '',
@@ -21,28 +23,73 @@ module.exports = app => app.component('profile', {
   },
   template: template,
   mounted: async function() {
-    console.log('this.auth', this.auth)
-    this.company = this.auth.user.companyName;
-    this.description = this.auth.user.description;
-    this.logo = this.auth.user.logo;
-    this.name = this.auth.user.githubUsername;
+    this.company = this.auth.subscriber.companyName;
+    this.description = this.auth.subscriber.description;
+    this.logo = this.auth.subscriber.logo;
+    this.name = this.auth.subscriber.githubUsername;
+  },
+  computed: {
+    logoURL() {
+      if (!this.logo || !validator.isURL(this.logo)) {
+        return '/images/dog1.webp';
+      }
+
+      return this.logo;
+    }
   },
   methods: {
-    async updateSub() {
+    async updateSubscriber() {
       if(!validator.isURL(this.logo)) {
+        this.status = 'error';
         this.error = 'Please enter a valid url';
+
+        vanillatoasts.create({
+          title: this.error,
+          icon: '/images/red-x.svg',
+          timeout: 8000,
+          positionClass: 'bottomRight'
+        });
+
         return;
       } else {
         this.error = '';
       }
-      const res = await api.post(`/api/updateSubscriber`, 
-      { user: this.auth.user._id, company: this.company, description: this.description, logo: this.logo},
-      {headers: { authorization: this.auth.accessToken, 'Content-Type': 'application/json' } });
-      console.log('the response', res.data)
-      this.company = res.data.companyName;
-      this.description = res.data.description;
-      this.logo = res.data.logo;
-      this.name = res.data.githubUsername;
+
+      const body = {
+        _id: this.auth.subscriber._id,
+        company: this.company,
+        description: this.description,
+        logo: this.logo
+      };
+      const opts = { headers: { authorization: this.auth.accessToken } };
+      this.status === 'saving';
+
+      let res;
+      try {
+        res = await api.post(`/api/updateSubscriber`, body, opts).then(res => res.data.subscriber);
+      } catch (err) {
+        vanillatoasts.create({
+          title: `HTTP ${err.response.status}: ${err.response.data ? err.response.data.message : 'No response'}`,
+          icon: '/images/red-x.svg',
+          timeout: 8000,
+          positionClass: 'bottomRight'
+        });
+        return
+      }
+
+      this.company = res.companyName;
+      this.description = res.description;
+      this.logo = res.logo;
+      this.name = res.githubUsername;
+
+      this.status = 'saved';
+
+      vanillatoasts.create({
+        title: 'Company Profile Updated!',
+        icon: '/images/check-green.svg',
+        timeout: 8000,
+        positionClass: 'bottomRight'
+      });
     }
   }
 });

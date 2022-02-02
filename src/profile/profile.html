@@ -1,43 +1,34 @@
 <section id="productDetails" class="profile">
   <div class="container">
-      <div class="productDetailsContainer">
-          <div class="productDetailsHeader smallMarginTop profilePabeProductDet">
-              <h2 class="subTitle">
-                  Company Profile
-                  <div class="downBorder"></div>
-              </h2>
-          </div>
+    <div class="productDetailsContainer">
+      <div class="productDetailsHeader smallMarginTop profilePabeProductDet">
+        <h2 class="subTitle">
+          Company Profile
+          <div class="downBorder"></div>
+        </h2>
       </div>
-
-      <div class="productFetures profilePageContent">
-          <div class="section group">
-              <div class="col span_1_of_2">
-                  <div class="jobBoard">
-                      <div class="jobDescription">
-                          <p class="jobTitle">Company name</p>
-                          <input type="text" v-model="company" name="" placeholder="Pooka's Cafe" id="companyName">
-                      </div>
-
-                      <div class="jobDescription companyDescriptionCtrl">
-                          <p class="jobTitle">Description</p>
-                          <textarea v-model="description" name="" id="companyDescription" cols="30" rows="2"
-                              placeholder="Pooka's Cafe is the #1 seller of treats in Miami Beach. Try our widgets out today!"></textarea>
-
-                      </div>
-
-                      <div class="jobDescription companyDescriptionCtrl companyLogo">
-                          <p class="jobTitle">Logo</p>
-                          <input type="text" id="logoUrl" placeholder="https://thecodebarbarian.com/images/mongoose5.png" v-model="logo" />
-                          <img :src="logo" alt="dog" class="companyLogoCtrl">
-                          <button class="saveBtn" @click="updateSub">Save</button>
-                      </div>
-                  </div>
+    </div>
+    <div class="productFetures profilePageContent">
+      <div class="section group">
+        <div class="col span_1_of_2">
+            <div class="jobBoard">
+              <div class="jobDescription">
+                <p class="jobTitle">Company name</p>
+                <input type="text" v-model="company" name="" placeholder="Pooka's Cafe" id="companyName">
               </div>
-              <div class="col span_1_of_2">
-
-
+              <div class="jobDescription companyDescriptionCtrl">
+                <p class="jobTitle">Description</p>
+                <textarea v-model="description" name="" id="companyDescription" cols="30" rows="2"></textarea>
               </div>
-          </div>
+              <div class="jobDescription companyDescriptionCtrl companyLogo">
+                <p class="jobTitle">Logo</p>
+                <input type="text" id="logoUrl" :class="error ? 'error' : ''" placeholder="Logo URL" v-model="logo" />
+                <img :src="logoURL" class="companyLogoCtrl">
+                <button class="saveBtn" @click="updateSubscriber" :disabled="status === 'saving'">Save</button>
+              </div>
+            </div>
+        </div>
       </div>
+    </div>
   </div>
 </section>
