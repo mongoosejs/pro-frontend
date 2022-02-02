@@ -493,7 +493,7 @@ input, select {
   margin-top: 3rem !important;
 }
 
-#companyName, #location, #applyUrl {
+#companyName, #location, #applyUrl, #logoUrl {
   padding: 1rem .75rem;
   border: none;
   border-radius: .5rem;
@@ -508,7 +508,7 @@ input, select {
   color: #000;
   margin-top: 1rem;
 }
-#companyName::placeholder, #location::placeholder, #applyUrl::placeholder {
+#companyName::placeholder, #location::placeholder, #applyUrl::placeholder, #logoUrl::placeholder {
   color: #000;
 }
 .profilePageContent .jobBoard {
