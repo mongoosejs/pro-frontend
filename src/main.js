@@ -57,7 +57,7 @@ app.component('app-component', {
   template: `
     <div>
       <navbar />
-      <router-view v-if="auth.status !== 'in_progress'" />
+      <router-view v-if="!$router.currentRoute.value.meta.requireLogin || auth.status !== 'in_progress'" />
       <footer-component />
     </div>
   `

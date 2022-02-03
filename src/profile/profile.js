@@ -14,7 +14,7 @@ module.exports = app => app.component('profile', {
   data: function() {
     return {
       status: 'init',
-      company: '',
+      companyName: '',
       description: '',
       logo: '',
       name: '',
@@ -23,7 +23,7 @@ module.exports = app => app.component('profile', {
   },
   template: template,
   mounted: async function() {
-    this.company = this.auth.subscriber.companyName;
+    this.companyName = this.auth.subscriber.companyName;
     this.description = this.auth.subscriber.description;
     this.logo = this.auth.subscriber.logo;
     this.name = this.auth.subscriber.githubUsername;
@@ -57,7 +57,7 @@ module.exports = app => app.component('profile', {
 
       const body = {
         _id: this.auth.subscriber._id,
-        company: this.company,
+        companyName: this.companyName,
         description: this.description,
         logo: this.logo
       };
@@ -77,7 +77,7 @@ module.exports = app => app.component('profile', {
         return
       }
 
-      this.company = res.companyName;
+      this.companyName = res.companyName;
       this.description = res.description;
       this.logo = res.logo;
       this.name = res.githubUsername;
