@@ -1,4 +1,4 @@
-<section id="productDetails">
+<section id="productDetails" class="team">
   <div class="container">
     <div class="productDetailsContainer">
       <div class="productDetailsHeader smallMarginTop profilePabeProductDet">
@@ -28,7 +28,7 @@
             <div class="jobDescription companyDescriptionCtrl">
               <p class="jobTitle">
                 github organization members
-                <button class="btnSyncBtn">Sync <img src="images/sync.png" alt="sync"></button>
+                <button class="btnSyncBtn" @click="updateGithubOrganizationMembers">Sync <img src="images/sync.png" alt="sync"></button>
               </p>
             </div>
           </div>
@@ -40,12 +40,18 @@
           <div class="jobBoard">
             <div class="jobDescription ">
               <div class="gitHubOrganization">
-                <div class="section group">
-                  <div class="col span_1_of_5">
+                <div class="section group no-members" v-if="true">
+                  No members found for GitHub organization "{{subscriber.subscriber.githubOrganization}}".
+                  If your organization memberships are all private, please install the
+                  <a href="https://github.com/apps/mongoose-pro">Mongoose Pro GitHub app</a>
+                  on your organization.
+                </div>
+                <div class="section group" v-for="group in groupsOf(subscriber.subscriber.githubOrganizationMembers, 5)">
+                  <div class="col span_1_of_5" v-for="member in group">
                     <div class="gitHubOrgSingle">
-                      <img src="images/dog2.webp" alt="dog" class="gitUser">
+                      <img :src="member.avatar" class="gitUser">
 
-                      <a href="#" class="userLink">pookapotty15</a>
+                      <a :href="'https://github.com/' + member.login" class="userLink">{{member.login}}</a>
                     </div>
                   </div>
                 </div>
