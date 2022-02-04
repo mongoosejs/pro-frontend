@@ -40,7 +40,7 @@
           <div class="jobBoard">
             <div class="jobDescription ">
               <div class="gitHubOrganization">
-                <div class="section group no-members" v-if="true">
+                <div class="section group no-members" v-if="subscriber.subscriber.githubOrganizationMembers.length === 0">
                   No members found for GitHub organization "{{subscriber.subscriber.githubOrganization}}".
                   If your organization memberships are all private, please install the
                   <a href="https://github.com/apps/mongoose-pro">Mongoose Pro GitHub app</a>
