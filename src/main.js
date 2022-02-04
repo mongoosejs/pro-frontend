@@ -19,6 +19,11 @@ require('./oauth-callback/oauth-callback')(app);
 require('./profile/profile')(app);
 require('./team/team')(app);
 
+let _initialAuthResolve = null;
+let initialAuthCheck = new Promise((resolve) => {
+  _initialAuthResolve = resolve;
+});
+
 app.component('app-component', {
   setup() {
     const accessToken = window.localStorage.getItem('_mongooseProToken') || null;
@@ -28,15 +33,23 @@ app.component('app-component', {
       accessToken: accessToken,
       subscriber: null
     });
-
     Vue.provide('auth', auth);
 
-    const state = Vue.reactive({ auth });
+    const subscriber = Vue.reactive({
+      subscriber: null
+    });
+    Vue.provide('subscriber', subscriber);
+
+    const state = Vue.reactive({ auth, subscriber });
+
+    window.__state = state;
+
     return state;
   },
   async mounted() {
     if (this.auth.accessToken == null) {
       this.auth.status = 'logged_out';
+      _initialAuthResolve();
       return;
     }
 
@@ -48,16 +61,18 @@ app.component('app-component', {
       });
     if (exists) {
       this.auth.status = 'logged_in';
-      this.auth.subscriber = token.subscriberId;
+      this.subscriber.subscriber = token.subscriberId;
+      _initialAuthResolve();
     } else {
       this.auth.status = 'logged_out';
-      this.auth.subscriber = null;
+      this.subscriber.subscriber = null;
+      _initialAuthResolve();
     }
   },
   template: `
     <div>
       <navbar />
-      <router-view v-if="!$router.currentRoute.value.meta.requireLogin || auth.status !== 'in_progress'" />
+      <router-view />
       <footer-component />
     </div>
   `
@@ -69,6 +84,14 @@ const router = VueRouter.createRouter({
     ...route,
     component: app.component(route.name)
   }))
+});
+
+router.beforeEach((from, to, next) => {
+  if (from.meta.requireLogin) {
+    initialAuthCheck.then(() => next());
+    return;
+  }
+  return next();
 });
 
 // Set the correct initial route: https://github.com/vuejs/vue-router/issues/866

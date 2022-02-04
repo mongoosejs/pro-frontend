@@ -10,7 +10,7 @@ const vanillatoasts = require('vanillatoasts');
 appendCSS(css);
 
 module.exports = app => app.component('profile', {
-  inject: ['auth'],
+  inject: ['auth', 'subscriber'],
   data: function() {
     return {
       status: 'init',
@@ -23,10 +23,10 @@ module.exports = app => app.component('profile', {
   },
   template: template,
   mounted: async function() {
-    this.companyName = this.auth.subscriber.companyName;
-    this.description = this.auth.subscriber.description;
-    this.logo = this.auth.subscriber.logo;
-    this.name = this.auth.subscriber.githubUsername;
+    this.companyName = this.subscriber.subscriber.companyName;
+    this.description = this.subscriber.subscriber.description;
+    this.logo = this.subscriber.subscriber.logo;
+    this.name = this.subscriber.subscriber.githubUsername;
   },
   computed: {
     logoURL() {
@@ -56,7 +56,7 @@ module.exports = app => app.component('profile', {
       }
 
       const body = {
-        _id: this.auth.subscriber._id,
+        _id: this.subscriber.subscriber._id,
         companyName: this.companyName,
         description: this.description,
         logo: this.logo
@@ -81,6 +81,11 @@ module.exports = app => app.component('profile', {
       this.description = res.description;
       this.logo = res.logo;
       this.name = res.githubUsername;
+
+      this.subscriber.subscriber.companyName = res.companyName;
+      this.subscriber.subscriber.description = res.description;
+      this.subscriber.subscriber.logo = res.logo;
+      this.subscriber.subscriber.githubUsername = res.githubUsername;
 
       this.status = 'saved';
 
