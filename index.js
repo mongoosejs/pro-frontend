@@ -25,9 +25,6 @@ for (const { path } of routes) {
   });
 }
 
-const _redirects = routes.filter(route => route.path !== '/').map(route => `${route.path} /`).join('\n') + '\n';
-fs.writeFileSync('./public/_redirects', _redirects);
-
 if (process.env.NODE_ENV === 'development') {
   const port = config.port || 3000;
   app.listen(port, () => {
