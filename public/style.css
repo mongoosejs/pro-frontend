@@ -242,12 +242,6 @@ input, select {
   text-transform: uppercase;
 }
 
-#banner {
-  background: url(../images/texture-left.png);
-  background-repeat: no-repeat;
-  background-position: -8% 10%;
-  background-size: 40% 108%;
-}
 #banner .container {
   padding: 3rem 12rem;
 }
