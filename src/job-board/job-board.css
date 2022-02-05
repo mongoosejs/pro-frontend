@@ -1,0 +1,18 @@
+.job-board button {
+  cursor: pointer;
+  margin-right: 1em;
+}
+
+.job-board .separator {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.job-board p.job-board-desc {
+  margin-bottom: 1.5em;
+  font-size: 1.25em;
+}
+
+.job-board .col {
+  margin: 0px;
+}

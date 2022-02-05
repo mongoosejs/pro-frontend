@@ -1,52 +1,56 @@
-<section id="productDetails">
+<section id="productDetails" class="job-board">
   <div class="container">
-      <div class="productDetailsContainer">
-          <div class="productDetailsHeader smallMarginTop profilePabeProductDet">
-              <h2 class="subTitle">
-                  Job Board
-                  <div class="downBorder"></div>
-                  <p class="jobDesc">You can list up to 2 jobs on the Monggose job board <br>
-                      as part of your Mongoose Pro subscription.</p>
-              </h2>
-          </div>
+    <div class="productDetailsContainer">
+      <div class="productDetailsHeader smallMarginTop profilePabeProductDet">
+        <h2 class="subTitle">
+          Job Board
+          <div class="downBorder"></div>
+        </h2>
       </div>
+    </div>
 
-      <div class="productFetures profilePageContent jobsPageContentCtrl">
-          <div class="section group">
-              <div class="col span_1_of_2">
-                  <div class="jobBoard">
-                      <div class="jobDescription">
-                          <p class="jobTitle">Job title</p>
-                          <input type="text" name="" placeholder="Chief Tasting Officer" id="companyName">
-                      </div>
+    <div class="productFetures profilePageContent jobsPageContentCtrl" v-if="status !== 'in_progress'">
+      <div class="section group">
+        <p class="job-board-desc">
+          You can list up to 2 jobs on the Mongoose job board as part of your Mongoose Pro subscription.
+        </p>
 
-                      <div class="jobDescription" style="margin-top: 2rem;">
-                          <p class="jobTitle">Location</p>
-                          <input type="text" name="" class="location" placeholder="Miami Beach" id="location">
-                      </div>
+        <div class="col">
+          <div class="jobBoard" v-for="(job, index) in jobs">
+            <hr v-if="index > 0" class="separator" />
+            <div class="jobDescription">
+              <p class="jobTitle">Job Title</p>
+              <input type="text" v-model="job.title" name="" placeholder="Senior Software Engineer" id="companyName">
+            </div>
 
-                      <div class="jobDescription companyDescriptionCtrl">
-                          <p class="jobTitle">Description</p>
-                          <textarea name="" id="companyDescription" cols="30" rows="2"
-                              placeholder="Pooka's Cafe is the #1 seller of treats in Miami Beach. Try our widgets out today!"></textarea>
-                      </div>
+            <div class="jobDescription" style="margin-top: 2rem;">
+              <p class="jobTitle">Location</p>
+              <input type="text" v-model="job.location" class="location" placeholder="Anywhere" id="location">
+            </div>
 
-                      <div class="jobDescription" style="margin-top: 2rem;">
-                          <p class="jobTitle">Apply url</p>
-                          <input type="text" name="" class="location" placeholder="http://google.com/test"
-                              id="applyUrl">
-                      </div>
+            <div class="jobDescription companyDescriptionCtrl">
+              <p class="jobTitle">Description</p>
+              <textarea
+                id="companyDescription"
+                cols="30"
+                rows="2"
+                v-model="job.description"
+                placeholder="Tell applicants more about the role and what you're looking for">
+              </textarea>
+            </div>
 
-                      <div class="jobDescription companyLogo">
-                          <button class="saveBtn">+ Add</button>
-                      </div>
-                  </div>
-              </div>
-              <div class="col span_1_of_2">
-
-
-              </div>
+            <div class="jobDescription" style="margin-top: 2rem;">
+              <p class="jobTitle">Apply url</p>
+              <input type="text" v-model="job.url" class="location" placeholder="http://google.com/test" id="applyUrl">
+            </div>
           </div>
+
+          <div class="jobDescription companyLogo">
+            <button class="saveBtn" @click="save" :disabled="status === 'saving'">Save</button>
+            <button class="saveBtn" @click="pushJob(jobs)" :disabled="jobs.length >= 2">+ Add</button>
+          </div>
+        </div>
       </div>
+    </div>
   </div>
 </section>

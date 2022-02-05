@@ -508,7 +508,7 @@ input, select {
   color: #000;
   margin-top: 1rem;
 }
-#companyName::placeholder, #location::placeholder, #applyUrl::placeholder, #logoUrl::placeholder {
+#location::placeholder, #applyUrl::placeholder, #logoUrl::placeholder {
   color: #666;
 }
 .profilePageContent .jobBoard {
@@ -530,9 +530,7 @@ input, select {
   color: #000;
   margin-top: 1rem;
 }
-#companyDescription::placeholder {
-  color: #000;
-}
+
 .companyDescriptionCtrl {
   margin-top: 2rem;
 }

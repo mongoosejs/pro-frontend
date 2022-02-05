@@ -25,7 +25,6 @@ module.exports = app => app.component('team', {
       for (let i = 0; i < arr.length; i += num) {
         ret.push(arr.slice(i, i + num));
       }
-      console.log('AA', ret);
       return ret;
     },
     async updateGithubOrganizationMembers() {
