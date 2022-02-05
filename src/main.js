@@ -5,12 +5,8 @@ const app = Vue.createApp({
 });
 
 const api = require('./api');
-const config = require('../.config');
-
-console.log('Mongoose Pro config:', config);
-
 Object.assign(app.config.globalProperties, {
-  githubLoginURL: `https://github.com/login/oauth/authorize?client_id=${config.githubOAuthClientId}`
+  githubLoginURL: `https://github.com/login/oauth/authorize?client_id=${__githubOAuthClientId}`
 });
 
 require('./home/home')(app);

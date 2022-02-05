@@ -19,6 +19,9 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       __BASE_URL: `'${config.baseURL}'`
+    }),
+    new webpack.DefinePlugin({
+      __githubOAuthClientId: `'${config.githubOAuthClientId}'`
     })
   ],
   module: {
