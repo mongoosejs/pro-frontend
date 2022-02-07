@@ -269,7 +269,7 @@ input, select {
   font-weight: 700;
 }
 #banner .authorComment {
-  width: 40%;
+  width: 66%;
   margin: 0 0 0 auto;
   text-align: right;
 }
@@ -332,9 +332,6 @@ input, select {
   margin-right: 2rem;
   height: 5rem;
 }
-.jobBoard .jobBoardImg2 {
-  height: auto;
-}
 .jobBoard .jobTitle {
   text-transform: uppercase;
   color: #030303;
@@ -382,7 +379,6 @@ input, select {
   text-decoration: none;
 }
 .jobDescription ul {
-  padding-left: 2rem;
   margin-top: 1rem;
 }
 .jobDescription ul li {
