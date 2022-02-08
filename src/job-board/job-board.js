@@ -62,7 +62,7 @@ module.exports = app => app.component('job-board', {
       this.status = 'saved';
 
       vanillatoasts.create({
-        title: 'Jobs Updated!',
+        title: 'Jobs submitted for approval!',
         icon: '/images/check-green.svg',
         timeout: 8000,
         positionClass: 'bottomRight'
