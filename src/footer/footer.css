@@ -28,6 +28,7 @@
   -moz-border-radius: 1rem;
   -ms-border-radius: 1rem;
   -o-border-radius: 1rem;
+  cursor: pointer;
 }
 #footer .mongooseProLoginBtn {
   border: .2rem solid #fff;
@@ -70,7 +71,7 @@
   font-size: 1.6rem;
   margin-top: 4rem;
 }
-#footer .shopeAparelBtn {
+#footer .shopApparelBtn {
   border: .1rem solid #870007;
   background: transparent;
   font-size: 1.5rem;
@@ -83,6 +84,7 @@
   -o-border-radius: 1rem;
   margin-top: 5rem;
   text-transform: uppercase;
+  cursor: pointer;
 }
 #footer input[type="email"] {
   padding: .75rem .5rem;
