@@ -1,6 +1,6 @@
 {
   "name": "pro-frontend",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "dependencies": {
     "axios": "0.21.4",
     "date-fns": "2.23.0",
