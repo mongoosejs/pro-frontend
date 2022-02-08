@@ -6,8 +6,8 @@
       </div>
     </a>
   </div>
-  <div class="links" v-if="auth.status === 'logged_out'">
-    <div><a href="#" class="active">BUY NOW</a></div>
+  <div class="links" v-if="auth.status === 'logged_out' || auth.status === 'not_a_subscriber'">
+    <div><a href="https://github.com/sponsors/mongoosejs/sponsorships?tier_id=73469&preview=false" class="active">BUY NOW</a></div>
     <div><a href="/#keyFeatures">KEY FEATURES</a></div>
     <div><a href="/#productDetails">PRODUCT DETAILS</a></div>
     <div>

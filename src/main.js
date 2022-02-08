@@ -13,6 +13,7 @@ require('./home/home')(app);
 require('./footer/footer')(app);
 require('./job-board/job-board')(app);
 require('./navbar/navbar')(app);
+require('./not-subscriber/not-subscriber')(app);
 require('./oauth-callback/oauth-callback')(app);
 require('./profile/profile')(app);
 require('./team/team')(app);
@@ -48,7 +49,7 @@ app.component('app-component', {
   async mounted() {
     if (this.auth.accessToken == null) {
       this.auth.status = 'logged_out';
-      _initialAuthResolve();
+      _initialAuthResolve(this.auth.status);
       return;
     }
 
@@ -58,22 +59,33 @@ app.component('app-component', {
       catch(err => {
         return { exists: false };
       });
+      console.log(this.$router.currentRoute);
     if (exists) {
-      this.auth.status = 'logged_in';
-      this.auth.subscriberId = token.subscriberId._id;
-      this.subscriber.subscriber = token.subscriberId;
-      _initialAuthResolve();
+      if (token.subscriberId == null) {
+        this.auth.status = 'not_a_subscriber';
+        if (this.$router.currentRoute.value.meta.requireLogin) {
+          this.$router.push('/not-subscriber');
+        }
+      } else {
+        this.auth.status = 'logged_in';
+        this.auth.subscriberId = token.subscriberId._id;
+        this.subscriber.subscriber = token.subscriberId;
+      }
+
+      _initialAuthResolve(this.auth.status);
     } else {
       this.auth.status = 'logged_out';
       this.auth.subscriberId = null;
       this.subscriber.subscriber = null;
-      _initialAuthResolve();
+      _initialAuthResolve(this.auth.status);
     }
   },
   template: `
     <div>
       <navbar />
-      <router-view />
+      <div v-if="!$router.currentRoute.value.meta.requireLogin || auth.status !== 'in_progress'">
+        <router-view />
+      </div>
       <footer-component />
     </div>
   `
@@ -85,14 +97,6 @@ const router = VueRouter.createRouter({
     ...route,
     component: app.component(route.name)
   }))
-});
-
-router.beforeEach((from, to, next) => {
-  if (from.meta.requireLogin) {
-    initialAuthCheck.then(() => next());
-    return;
-  }
-  return next();
 });
 
 // Set the correct initial route: https://github.com/vuejs/vue-router/issues/866

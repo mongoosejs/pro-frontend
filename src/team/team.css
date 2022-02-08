@@ -2,11 +2,6 @@
   cursor: pointer;
 }
 
-.team a {
-  text-decoration: none;
-  color: #0971B1;
-}
-
 .team .no-members {
   margin-top: 0.5em;
   font-size: 1.25em;

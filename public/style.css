@@ -41,6 +41,8 @@ a {
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
+  text-decoration: none;
+  color: #0971B1;
 }
 hr {
   display: block;
