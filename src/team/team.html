@@ -16,7 +16,7 @@
             <div class="jobDescription">
               <p class="jobTitle">
                 Github organization
-                <img src="images/check.png" alt="check" class="checkImg">
+                <img src="images/check.png" alt="check" class="checkImg" v-if="subscriber.subscriber.githubOrganization != null">
               </p>
               <input type="text" v-model="githubOrganization" placeholder="Org Name Textbox" id="companyName">
             </div>
@@ -25,10 +25,12 @@
               <button class="saveBtn" @click="updateSubscriber" :disabled="status === 'saving'">Save</button>
             </div>
 
-            <div class="jobDescription companyDescriptionCtrl">
+            <div class="jobDescription companyDescriptionCtrl" v-if="subscriber.subscriber.githubOrganization != null">
               <p class="jobTitle">
                 github organization members
-                <button class="btnSyncBtn" @click="updateGithubOrganizationMembers">Sync <img src="images/sync.png" alt="sync"></button>
+                <button class="btnSyncBtn" @click="updateGithubOrganizationMembers">
+                  Sync <img src="images/sync.png" alt="sync">
+                </button>
               </p>
             </div>
           </div>
@@ -36,7 +38,7 @@
         <div class="col span_1_of_2">
         </div>
 
-        <div class="fullGitOranization">
+        <div class="fullGitOranization" v-if="subscriber.subscriber.githubOrganization != null">
           <div class="jobBoard">
             <div class="jobDescription ">
               <div class="gitHubOrganization">
