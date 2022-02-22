@@ -547,14 +547,14 @@ input, select {
 .profilePabeProductDet {
   margin-bottom: 0 !important;
 }
+
 .gitHubOrganization .gitHubOrgSingle {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  margin-top: 0.75em;
 }
 .gitHubOrganization .gitHubOrgSingle img {
-  width: 6rem;
-  height: 7rem;
+  width: 6em;
+  vertical-align: middle;
+  margin-right: 0.5em;
 }
 .gitHubOrganization .gitHubOrgSingle a {
   text-decoration: none;

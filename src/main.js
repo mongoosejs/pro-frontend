@@ -99,6 +99,32 @@ const router = VueRouter.createRouter({
   }))
 });
 
+router.beforeEach((to, from, next) => {
+  if (!to.matched.length) {
+    next({path: '/404'});
+    return;
+  }
+
+  if (to.meta && to.meta.requireLogin) {
+    if (!window.localStorage.getItem('_mongooseProToken')) {
+      next('/');
+      return;
+    }
+
+    initialAuthCheck.then(status => {
+      if (status === 'logged_out') {
+        next('/');
+        return;
+      }
+
+      return next();
+    });
+    return;
+  }
+
+  next();
+});
+
 // Set the correct initial route: https://github.com/vuejs/vue-router/issues/866
 router.replace(window.location.pathname);
 

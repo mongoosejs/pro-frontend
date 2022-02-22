@@ -48,12 +48,14 @@
                   <a href="https://github.com/apps/mongoose-pro">Mongoose Pro GitHub app</a>
                   on your organization.
                 </div>
-                <div class="section group" v-for="group in groupsOf(subscriber.subscriber.githubOrganizationMembers, 5)">
-                  <div class="col span_1_of_5" v-for="member in group">
+                <div class="section group">
+                  <div class="" v-for="member in subscriber.subscriber.githubOrganizationMembers">
                     <div class="gitHubOrgSingle">
                       <img :src="member.avatar" class="gitUser">
 
-                      <a :href="'https://github.com/' + member.login" class="userLink">{{member.login}}</a>
+                      <a :href="'https://github.com/' + member.login" target="_blank" class="userLink">
+                        {{member.login}}
+                      </a>
                     </div>
                   </div>
                 </div>
