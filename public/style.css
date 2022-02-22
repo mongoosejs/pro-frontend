@@ -363,6 +363,10 @@ input, select {
   align-items: center;
   margin-left: 1.5rem;
 }
+.jobBoard .jobTitle button:disabled {
+  background: #ddd;
+  border: .1rem solid #ddd;
+}
 .jobBoard .jobTitle button img {
   width: 1.8rem;
 }

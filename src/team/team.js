@@ -16,16 +16,8 @@ module.exports = app => app.component('team', {
     this.githubOrganization = this.subscriber.subscriber.githubOrganization;
   },
   methods: {
-    groupsOf(arr, num) {
-      if (arr == null || arr.length === 0) {
-        return [];
-      }
-
-      const ret = [];
-      for (let i = 0; i < arr.length; i += num) {
-        ret.push(arr.slice(i, i + num));
-      }
-      return ret;
+    redirectToGithubApp() {
+      window.location.href = 'https://github.com/apps/mongoose-pro';
     },
     async updateGithubOrganizationMembers() {
       const body = {
@@ -33,7 +25,7 @@ module.exports = app => app.component('team', {
         githubOrganization: this.githubOrganization
       };
       const opts = { headers: { authorization: this.auth.accessToken } };
-      this.status === 'saving';
+      this.status = 'syncing';
 
       let res;
       try {
@@ -57,6 +49,8 @@ module.exports = app => app.component('team', {
         timeout: 8000,
         positionClass: 'bottomRight'
       });
+
+      this.status = 'init';
     },
     async updateSubscriber() {
       const body = {
